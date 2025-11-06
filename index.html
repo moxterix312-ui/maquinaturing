@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máquina de Turing — Sergio Gramajo Pineda</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="img/logo.png" alt="Logo del proyecto" class="logo-img">
+      <span class="nav-title">Máquina de Turing</span>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+    <nav id="nav-menu" class="collapsed">
+      <a href="#inicio">Inicio</a>
+      <a href="#simulacion">Simulación</a>
+      <a href="#teoria">Teoría</a>
+      <a href="#creditos">Créditos</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="section card">
+    <h1>Máquina de Turing — Comparador de Cadenas Binarias</h1>
+    <p>Proyecto desarrollado para el curso de <strong>Automatas y Lenguajes Formales</strong>.  
+      Esta máquina de Turing compara dos cadenas binarias separadas por un espacio y determina si son iguales.</p>
+    <ul>
+      <li>Entrada: dos cadenas binarias (por ejemplo, <code>1011 1011</code>).</li>
+      <li>Salida: <strong>Aceptada</strong> si son iguales, <strong>Rechazada</strong> si son diferentes.</li>
+    </ul>
+  </section>
+
+  <section id="simulacion" class="section card">
+    <h2>Simulación de la Máquina</h2>
+    <p class="small">Ingresa dos cadenas binarias separadas por un espacio (por ejemplo: 1011 1011).</p>
+
+    <label class="small">Cadena (w):</label>
+    <input id="inputW" type="text" placeholder="ej: 1011 1011" value="1011 1011">
+
+    <div class="speed-control">
+      <label class="small">Velocidad (ms paso automático):</label>
+      <input id="speed" type="range" min="100" max="2000" value="600">
+      <span id="speedLabel">600ms</span>
+    </div>
+
+    <div class="controls">
+      <button id="btnInit" class="primary">Cargar</button>
+      <button id="btnStep">Paso</button>
+      <button id="btnRun">Ejecutar</button>
+      <button id="btnPause">Pausar</button>
+      <button id="btnReset">Reset</button>
+      <button id="btnExport">Exportar resultado</button>
+    </div>
+
+    <div class="tape-wrap">
+      <div id="tape" class="tape"></div>
+    </div>
+
+    <div class="state-container">
+      <div>
+        <div class="small">Estado actual:</div>
+        <div class="code" id="stateBox">q0</div>
+      </div>
+      <div>
+        <div class="small">Instantánea (ID):</div>
+        <div class="code" id="idBox">—</div>
+      </div>
+    </div>
+
+    <div id="result"></div>
+  </section>
+
+  <section id="teoria" class="section card">
+    <h2>Teoría del funcionamiento</h2>
+    <p>La Máquina de Turing (MT) diseñada realiza la comparación de dos cadenas binarias separadas por un espacio.  
+    Revisa símbolo por símbolo, marcando coincidencias en ambos lados de la cadena.</p>
+
+    <h3>Descripción formal:</h3>
+    <p><strong>M = (Q, Σ, Γ, δ, q₀, q_accept, q_reject)</strong></p>
+    <ul>
+      <li>Q = {q₀, q₁, q₂, q₃, q₄, q_accept, q_reject}</li>
+      <li>Σ = {0, 1, ␣}</li>
+      <li>Γ = {0, 1, A, B, a, b, ␣}</li>
+      <li>q₀ = estado inicial</li>
+      <li>q_accept = acepta si ambas cadenas son iguales</li>
+      <li>q_reject = rechaza si difieren</li>
+    </ul>
+
+    <h3>Ejemplos:</h3>
+    <ul>
+      <li>1011 1011 → Aceptada</li>
+      <li>101 100 → Rechazada</li>
+      <li>110 110 → Aceptada</li>
+      <li>111 011 → Rechazada</li>
+    </ul>
+  </section>
+
+  <section id="creditos" class="section card">
+    <h2>Créditos</h2>
+    <p><strong>Nombre:</strong> Sergio Gramajo Pineda</p>
+    <p><strong>Carné:</strong> 0902-23-20001</p>
+    <p>Universidad Mariano Gálvez de Guatemala — Facultad de Ingeniería en Sistemas</p>
+    <p>Curso: <em>Automatas y Lenguajes Formales</em></p>
+  </section>
+
+  <footer class="footer">
+    © 2025 — Proyecto Máquina de Turing desarrollado por Sergio Gramajo Pineda "El chejo"
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
