@@ -192,3 +192,38 @@ nav#nav-menu.active {
     gap: 10px;
   }
 }
+#recursos {
+  text-align: center;
+  margin-top: 30px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#recursos h2 {
+  color: var(--accent);
+}
+
+.drive-link {
+  display: inline-block;
+  background: linear-gradient(90deg, #0284c7, #0ea5b0);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 15px 0;
+}
+
+.drive-link:hover {
+  background: linear-gradient(90deg, #06b6d4, #0ea5b0);
+  transform: scale(1.05);
+}
+
+#recursos .small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
